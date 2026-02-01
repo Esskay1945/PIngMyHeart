@@ -380,7 +380,7 @@
       noBtn.disabled = true;
     });
 
-    noBtn.addEventListener("mouseenter", () => {
+    function moveNoButton() {
       if (pleaCount >= 20) {
         caption.textContent = "Ouch 😩 my code is now emotionally damaged 💻💔";
         caption.style.opacity = 1;
@@ -397,7 +397,10 @@
       caption.textContent = pleas[pleaCount];
       caption.style.opacity = 1;
       pleaCount++;
-    });
+    }
+
+    noBtn.addEventListener("mouseenter", moveNoButton);
+    noBtn.addEventListener("click", moveNoButton);
 
     function createHeart() {
       const heart = document.createElement("div");
